@@ -46,8 +46,8 @@
                           <td>$fileDate</td>
                           <td>
                             <a href='$filePath' class='btn btn-sm btn-success' download>Download</a>
-                            <a href='delete.php?file=$file' class='btn btn-sm btn-danger'>Delete</a>
-                          </td>
+                            <a href='delete.php?file=$file' class='btn btn-sm btn-danger' onclick=\"return confirm('Yakin ingin hapus file ini?');\">Delete</a>
+                          </td>                                         
                         </tr>";
                         }
                     }
@@ -58,11 +58,31 @@
             <!-- Upload Section -->
             <div class="mt-4">
                 <form action="upload.php" method="POST" enctype="multipart/form-data" class="d-flex">
-                    <input type="file" class="form-control me-2" name="fileUpload" required>
+                    <input type="file" class="form-control me-2 text-bg-primary" name="fileUpload" required>
                     <button class="btn btn-primary" type="submit" name="submit">Upload</button>
                 </form>
             </div>
 
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
         </div>
     </div>
 
